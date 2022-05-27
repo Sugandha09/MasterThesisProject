@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(layout="wide")
-from annotated_text import annotated_text
+#from annotated_text import annotated_text
 from PIL import Image
 
 
