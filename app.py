@@ -17,7 +17,7 @@ with open('style.css') as f:
 # Title of the main page
 st.title('Data Visualization using Python Libraries')
 
-image = Image.open('C:\\Users\\HP\\streamlit_apps\\multipage\\landscape-colors.png')
+image = Image.open('landscape-colors.png')
 st.image(image, caption='Overview of Data Visualization Libraries of Python (https://pyviz.org)')
 
 # Add all your applications (pages) here
