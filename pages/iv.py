@@ -19,7 +19,7 @@ import os
 
 def app():
     st.subheader('Interactive Plots')
-    data=pd.read_csv(r'C:\Users\HP\streamlit_apps\multipage\city_temp.csv')
+    data=pd.read_csv('city_temp.csv')
     col1,col2,col3=st.columns([1,5,1])
     with col2:
         st.subheader("1. Interactive Multiple Line chart")
@@ -34,7 +34,7 @@ def app():
         st.write(hv.render(mlp, backend='bokeh'))
         
         st.subheader('2. Interactive pie-chart')
-        df=pd.read_csv(r'C:\Users\HP\streamlit_apps\multipage\westmidlands_crime.csv')
+        df=pd.read_csv('westmidlands_crime.csv')
         d2=df['Town'].groupby([df['Month'],df['Town']]).count()
         df3=pd.DataFrame({'': d2.loc[:,'Birmingham'].index.tolist(), 'Birmingham':d2.loc[:,'Birmingham'].tolist(), 
                 'Coventry': d2.loc[:,'Coventry'].tolist(), 'Sandwell':d2.loc[:,'Sandwell'].tolist(), 'Wolverhampton':
@@ -48,7 +48,7 @@ def app():
         
         
         st.subheader('3. Interactive Histogram')
-        df1= pd.read_csv(r'C:\Users\HP\streamlit_apps\multipage\melanoma-1.csv')
+        df1= pd.read_csv('melanoma-1.csv')
         fhg=df1[['thickness', 'age']].iplot(asFigure=True,
             kind='hist',
             histnorm='percent',
@@ -121,19 +121,19 @@ def app():
     
         
         st.subheader('8. 3D Map')
-        mapp = open(r"C:\Users\HP\Downloads\cmap.html", 'r', encoding='utf-8')
+        mapp = open("cmap.html", 'r', encoding='utf-8')
         so = mapp.read() 
         print(so)
         components.html(so, height=500, width=800 )
         
         st.subheader('9. 3D Map with hexagonal layer')
-        mapp3 = open(r"C:\Users\HP\Downloads\hlm2.html", 'r', encoding='utf-8')
+        mapp3 = open("hlm2.html", 'r', encoding='utf-8')
         so3 = mapp3.read() 
         print(so3)
         components.html(so3, height=500, width=800)
     
         st.subheader('10. 3D Map with column layer')
-        mapp4 = open(r"C:\Users\HP\Downloads\newmap.html", 'r', encoding='utf-8')
+        mapp4 = open("newmap.html", 'r', encoding='utf-8')
         so4 = mapp4.read() 
         print(so4)
         components.html(so4, height=500, width=800)
@@ -146,7 +146,7 @@ def app():
         components.html(so1, height=500, width=800)
     
         st.subheader('12. Density Map')
-        mapp2 = open(r"C:\Users\HP\Downloads\density.html", 'r', encoding='utf-8')
+        mapp2 = open("density.html", 'r', encoding='utf-8')
         so2 = mapp2.read() 
         print(so2)
         components.html(so2, height=500, width=800)
