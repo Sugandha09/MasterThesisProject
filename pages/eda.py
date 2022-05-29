@@ -1,6 +1,7 @@
 import streamlit as st
 import sweetviz as sv
 import pandas as pd
+import streamlit.components.v1 as components
 
 def app():
     st.header('Exploratory Data Analysis')
@@ -12,6 +13,7 @@ def app():
     advert_report = sv.analyze(data)
     #display the report
     advert_report.show_html('edatemp.html')
+    components.iframe(src='edatemp.html', width=1100, height=1200, scrolling=True)
     
     data1=pd.read_csv('westmidlands_crime.csv')
     data1=data1.drop('Crime ID', axis=1)
@@ -19,10 +21,12 @@ def app():
     advert_report1 = sv.analyze(data1)
     #display the report
     advert_report1.show_html('edacrime.html')
+    components.iframe(src='edacrime.html', width=1100, height=1200, scrolling=True)
     
     data2=pd.read_csv('melanoma-1.csv')
     data2['year']=data2['year'].astype('category')
     advert_report2 = sv.analyze(data2)
     #display the report
     advert_report2.show_html('edamelanoma.html')
+    components.iframe(src='edamelanoma.html', width=1100, height=1200, scrolling=True)
     
