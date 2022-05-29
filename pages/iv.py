@@ -112,44 +112,44 @@ def app():
                         'Japan': d1.loc[:,'Japan'].tolist(),  'United Kingdom': d1.loc[:,'United Kingdom'].tolist() })
         bar_data.set_index('Year', inplace=True)
         html_str= bcr.bar_chart_race(df=bar_data ,title='Variation in Average Temperature (Fahrenheit)', steps_per_period=1).data
-     
-        start = html_str.find('base64,')+len('base64,')
-        end = html_str.find('">')
+        components.html(html_str, height=500, width=950)
+        #start = html_str.find('base64,')+len('base64,')
+        #end = html_str.find('">')
 
-        video = base64.b64decode(html_str[start:end])
-        st.video(video)
+        #video = base64.b64decode(html_str[start:end])
+        #st.video(video)
     
         
         st.subheader('8. 3D Map')
         mapp = open(r"C:\Users\HP\Downloads\cmap.html", 'r', encoding='utf-8')
         so = mapp.read() 
         print(so)
-        components.html(so, height=500)
+        components.html(so, height=500, width=800 )
         
         st.subheader('9. 3D Map with hexagonal layer')
         mapp3 = open(r"C:\Users\HP\Downloads\hlm2.html", 'r', encoding='utf-8')
         so3 = mapp3.read() 
         print(so3)
-        components.html(so3, height=500)
+        components.html(so3, height=500, width=800)
     
         st.subheader('10. 3D Map with column layer')
         mapp4 = open(r"C:\Users\HP\Downloads\newmap.html", 'r', encoding='utf-8')
         so4 = mapp4.read() 
         print(so4)
-        components.html(so4, height=500)
+        components.html(so4, height=500, width=800)
     
     
         st.subheader('11. Bubble plot on a Map')
         mapp1 = open(r"C:\Users\HP\Downloads\coloredscatter.html", 'r', encoding='utf-8')
         so1 = mapp1.read() 
         print(so1)
-        components.html(so1, height=500)
+        components.html(so1, height=500, width=800)
     
         st.subheader('12. Density Map')
         mapp2 = open(r"C:\Users\HP\Downloads\density.html", 'r', encoding='utf-8')
         so2 = mapp2.read() 
         print(so2)
-        components.html(so2, height=500)
+        components.html(so2, height=500, width=800)
         
         
         
