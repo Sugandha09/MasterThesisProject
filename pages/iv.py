@@ -140,7 +140,7 @@ def app():
     
     
         st.subheader('11. Bubble plot on a Map')
-        mapp1 = open(r"C:\Users\HP\Downloads\coloredscatter.html", 'r', encoding='utf-8')
+        mapp1 = open("coloredscatter.html", 'r', encoding='utf-8')
         so1 = mapp1.read() 
         print(so1)
         components.html(so1, height=500, width=800)
