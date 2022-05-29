@@ -102,17 +102,17 @@ def app():
         st.write('https://mi-linux.wlv.ac.uk/~2048496/mappp.html')
          
     
-        #st.subheader("7. Animated Bar Chart")
-        #import bar_chart_race as bcr
-        #import ffmpeg
-        #import base64
-        #d1=data.groupby(['Year', 'Country'])['AvgTemperature'].mean()
-        #bar_data=pd.DataFrame({'Year': d1.loc[:,'India'].index.tolist(), 'Australia': d1.loc[:,'Australia'].tolist(), 'Egypt': d1.loc[:,'Egypt'].tolist()
-                        #,'South Africa': d1.loc[:,'South Africa'].tolist(), 'China': d1.loc[:,'China'].tolist(),  'India': d1.loc[:,'India'].tolist(), 
-                        #'Japan': d1.loc[:,'Japan'].tolist(),  'United Kingdom': d1.loc[:,'United Kingdom'].tolist() })
-        #bar_data.set_index('Year', inplace=True)
-        #html_str= bcr.bar_chart_race(df=bar_data ,title='Variation in Average Temperature (Fahrenheit)', steps_per_period=1).data
-        #components.html(html_str, height=500, width=950)
+        st.subheader("7. Animated Bar Chart")
+        import bar_chart_race as bcr
+        import ffmpeg
+        import base64
+        d1=data.groupby(['Year', 'Country'])['AvgTemperature'].mean()
+        bar_data=pd.DataFrame({'Year': d1.loc[:,'India'].index.tolist(), 'Australia': d1.loc[:,'Australia'].tolist(), 'Egypt': d1.loc[:,'Egypt'].tolist()
+                        ,'South Africa': d1.loc[:,'South Africa'].tolist(), 'China': d1.loc[:,'China'].tolist(),  'India': d1.loc[:,'India'].tolist(), 
+                        'Japan': d1.loc[:,'Japan'].tolist(),  'United Kingdom': d1.loc[:,'United Kingdom'].tolist() })
+        bar_data.set_index('Year', inplace=True)
+        html_str= bcr.bar_chart_race(df=bar_data ,title='Variation in Average Temperature (Fahrenheit)', steps_per_period=1).data
+        components.html(html_str, height=500, width=950)
         #start = html_str.find('base64,')+len('base64,')
         #end = html_str.find('">')
 
