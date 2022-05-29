@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.5.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-map-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#map {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#deckgl-overlay {
+  z-index: 2;
+  background: none;
+}
+
+#deck-map-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"latitude": 52.479699, "longitude": -1.902691, "pitch": 50, "zoom": 8}, "layers": [{"@@type": "ColumnLayer", "autoHighlight": true, "data": [{"2021-01": 12898, "2021-02": 12117, "2021-03": 14221, "2021-04": 13160, "2021-05": 13969, "2021-06": 14925, "2021-07": 15044, "Cities": "Birmingham", "Latitude": 52.4796992, "Longitude": -1.9026911, "Total_Crimes": 963.34}, {"2021-01": 3237, "2021-02": 3289, "2021-03": 3852, "2021-04": 3424, "2021-05": 3727, "2021-06": 3856, "2021-07": 3947, "Cities": "Coventry", "Latitude": 52.4081812, "Longitude": -1.510477, "Total_Crimes": 253.32}, {"2021-01": 3248, "2021-02": 3159, "2021-03": 3565, "2021-04": 3367, "2021-05": 3722, "2021-06": 3779, "2021-07": 3969, "Cities": "Sandwell", "Latitude": 52.5151278, "Longitude": -2.013562373718973, "Total_Crimes": 248.09}, {"2021-01": 2761, "2021-02": 2460, "2021-03": 3053, "2021-04": 2909, "2021-05": 2979, "2021-06": 3137, "2021-07": 3484, "Cities": "Wolverhampton", "Latitude": 52.5847651, "Longitude": -2.127567, "Total_Crimes": 207.83}, {"2021-01": 2785, "2021-02": 2625, "2021-03": 2939, "2021-04": 2879, "2021-05": 2963, "2021-06": 3108, "2021-07": 3364, "Cities": "Walsall", "Latitude": 52.5847949, "Longitude": -1.9822687, "Total_Crimes": 206.63}, {"2021-01": 2464, "2021-02": 2415, "2021-03": 2812, "2021-04": 2583, "2021-05": 2845, "2021-06": 2985, "2021-07": 3017, "Cities": "Dudley", "Latitude": 52.5110832, "Longitude": -2.0816813, "Total_Crimes": 191.21}, {"2021-01": 1637, "2021-02": 1425, "2021-03": 1643, "2021-04": 1623, "2021-05": 1695, "2021-06": 1717, "2021-07": 1748, "Cities": "Solihull", "Latitude": 52.4130189, "Longitude": -1.7768935, "Total_Crimes": 114.88}], "elevationScale": 100, "getElevation": "@@=Total_Crimes", "getFillColor": [255, 165, 0, 80], "getPosition": "@@=[Longitude, Latitude]", "id": "e89d01f7-314e-49c5-9db6-d040476c05ca", "pickable": true, "radius": 5000}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
+    const tooltip = true;
+    const customLibraries = null;
+
+    const deckInstance = createDeck({
+                  container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>
