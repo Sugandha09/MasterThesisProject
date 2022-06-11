@@ -11,7 +11,7 @@ from io import BytesIO
 def app():
     
     st.header('Static Visulaizations')
-    data=pd.read_csv(r'C:\Users\HP\streamlit_apps\multipage\city_temp.csv')
+    data=pd.read_csv('city_temp.csv')
     st.markdown('**This page will navigate though some static visualisations related with the datasets we have seen earlier**')
     col1,col2,col3=st.columns([5,1,5])
     with col1:
@@ -324,7 +324,7 @@ def app():
                     plt.legend()
                     st.pyplot(fig)
     
-    data1=pd.read_csv(r'C:\Users\HP\streamlit_apps\multipage\westmidlands_crime.csv')
+    data1=pd.read_csv('westmidlands_crime.csv')
     with col3:
         st.subheader("4. Pie charts")
         chart3=st.selectbox('Select the chart type',['Basic Pie Chart with Shadow', 'Pie chart with pulled pies', 'Donut Chart', 'Nested Pie Chart'])
@@ -416,7 +416,7 @@ def app():
     
     
     
-    data2=pd.read_csv(r'C:\Users\HP\streamlit_apps\multipage\melanoma-1.csv')
+    data2=pd.read_csv('melanoma-1.csv')
     with col1:
         st.subheader("5. Histogram")
         chart4=st.selectbox('Select the chart type',['Basic Histogram', 'Histogram with mean and median line', '2D histogram or Density heat map'])
